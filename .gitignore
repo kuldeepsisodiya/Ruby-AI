@@ -1,0 +1,24 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Temp files
+*.tmp
+*.swp
+*.bak
+*~
+
+# Swift / Xcode build caches
+.build/
+.swiftpm/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Ruby bundler
+.bundle/
+vendor/bundle/
