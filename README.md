@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <a href="Ruby.dmg"><img src="https://img.shields.io/badge/Download-Ruby%201.4.0%20DMG-E02444?style=for-the-badge&logo=apple&logoColor=white" alt="Download DMG"></a>
+  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.4.0/Ruby.dmg"><img src="https://img.shields.io/badge/Download-Ruby%201.4.0%20DMG-E02444?style=for-the-badge&logo=apple&logoColor=white" alt="Download DMG"></a>
+  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.4.0"><img src="https://img.shields.io/badge/Release-v1.4.0-blue?style=for-the-badge&logo=github&logoColor=white" alt="v1.4.0"></a>
   <img src="https://img.shields.io/badge/macOS-14.0%2B%20Sonoma%20%7C%20Sequoia-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 14+">
   <img src="https://img.shields.io/badge/Architecture-Apple%20Silicon%20(arm64)-0A84FF?style=for-the-badge" alt="Architecture">
   <img src="https://img.shields.io/badge/Security-Encrypted%20Keychain-34C759?style=for-the-badge&logo=apple&logoColor=white" alt="Security">
-  <img src="https://img.shields.io/badge/Pricing-BYOK%20%2F%20Lifetime-FF9F0A?style=for-the-badge" alt="BYOK">
 </p>
 
 ---
@@ -23,11 +23,11 @@ Whether you're running local offline inference via **Ollama / LM Studio** or que
 ## 🚀 Quick Download & Installation
 
 ### 1. Download the Installer
-Download the verified disk image directly from this repository:
+Download the verified disk image directly from the [v1.4.0 GitHub Release](https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.4.0):
 
 | Asset | Version | Architecture | Size | SHA-256 Checksum |
 | :--- | :--- | :--- | :--- | :--- |
-| [**Ruby.dmg**](Ruby.dmg) | `1.4.0` | Apple Silicon (`arm64`) | `18.4 MB` | `7c7961e6345281cac3917f142fc572fa611d665f753dcf1cc717f35d5431fa46` |
+| [**Ruby.dmg**](https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.4.0/Ruby.dmg) | `1.4.0` | Apple Silicon (`arm64`) | `18.4 MB` | `7c7961e6345281cac3917f142fc572fa611d665f753dcf1cc717f35d5431fa46` |
 
 > [!TIP]
 > You can verify your download integrity anytime via the terminal:
