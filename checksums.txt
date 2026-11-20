@@ -1,4 +1,4 @@
-# Ruby 1.4.0 Official Release Checksums
+# Ruby 1.5.0 Official Release Checksums
 # Verify with: shasum -a 256 -c checksums.txt
 
-7c7961e6345281cac3917f142fc572fa611d665f753dcf1cc717f35d5431fa46  Ruby.dmg
+2c20c9f6efd4cf925aed6dd22754ad25ada6a2d4ca76cbdb3b418a1d7a1c300f  Ruby.dmg

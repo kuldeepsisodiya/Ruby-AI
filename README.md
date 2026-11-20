@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/banners/ruby_hero_banner.png" alt="Ruby 1.4.0 Hero Banner" width="100%" />
+  <img src="assets/banners/ruby_hero_banner.png" alt="Ruby 1.5.0 Hero Banner" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.4.0/Ruby.dmg"><img src="https://img.shields.io/badge/Download-Ruby%201.4.0%20DMG-E02444?style=for-the-badge&logo=apple&logoColor=white" alt="Download DMG"></a>
-  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.4.0"><img src="https://img.shields.io/badge/Release-v1.4.0-blue?style=for-the-badge&logo=github&logoColor=white" alt="v1.4.0"></a>
+  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.5.0/Ruby.dmg"><img src="https://img.shields.io/badge/Download-Ruby%201.5.0%20DMG-E02444?style=for-the-badge&logo=apple&logoColor=white" alt="Download DMG"></a>
+  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.5.0"><img src="https://img.shields.io/badge/Release-v1.5.0-blue?style=for-the-badge&logo=github&logoColor=white" alt="v1.5.0"></a>
   <img src="https://img.shields.io/badge/macOS-14.0%2B%20Sonoma%20%7C%20Sequoia-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 14+">
   <img src="https://img.shields.io/badge/Architecture-Apple%20Silicon%20(arm64)-0A84FF?style=for-the-badge" alt="Architecture">
   <img src="https://img.shields.io/badge/Security-Encrypted%20Keychain-34C759?style=for-the-badge&logo=apple&logoColor=white" alt="Security">
@@ -14,20 +14,30 @@
 
 ## 💎 Overview
 
-**Ruby 1.4.0** is a native macOS desktop application engineered for real-time visual question solving and unobtrusive AI-assisted reasoning. Built from the ground up in **Swift & SwiftUI**, Ruby pairs Apple Vision OCR technology with a customizable multi-provider AI engine and hardware-level feedback systems.
+**Ruby 1.5.0** is a native macOS desktop application engineered for real-time visual question solving and unobtrusive AI-assisted reasoning. Built from the ground up in **Swift & SwiftUI**, Ruby pairs Apple Vision OCR technology with a customizable multi-provider AI engine and hardware-level feedback systems.
 
-Whether you're running local offline inference via **Ollama / LM Studio** or querying high-parameter models (**OpenAI GPT-4o, Claude, Mistral**), Ruby operates invisibly under your fingertips with zero telemetry, zero monthly subscriptions, and end-to-end local security.
+Whether you're running local offline inference via **Apple Silicon Foundation Models (`fm serve`)**, local LLMs with **Ollama / LM Studio**, or querying high-parameter cloud models (**OpenAI GPT-4o, Claude, Mistral**), Ruby operates invisibly under your fingertips with zero telemetry, zero monthly subscriptions, and end-to-end local security.
+
+---
+
+## ✨ What's New in Ruby 1.5.0
+
+* **🍷 Ruby Liquid Glass Aesthetic**: A ground-up visual refinement combining Apple's translucent Liquid Glass materials (macOS Sonoma / Sequoia style) with the clean, restrained layouts of Linear and Raycast. Featuring the signature **Ruby Rose (`#F05B78`)** palette, soft ambient shadows, specular highlights, and adaptive translucency.
+* **💬 Interactive Follow-Up Search / Ask Bar**: Directly type follow-up questions inside the Remote Exam stealth popup. Includes full caret focus, text selection, standard macOS editing shortcuts (<kbd>⌘A</kbd>, <kbd>⌘C</kbd>, <kbd>⌘V</kbd>, <kbd>⌘Z</kbd>), and an auto-scrolling conversation history thread.
+* **📌 Real Pin / Position Lock**: Easily pin the Remote Exam popup to lock its exact screen coordinates and maintain always-on-top visibility above all application windows. Unpinning immediately restores free dragging with dedicated native drag handles.
+* **🍏 Apple Silicon Foundation Models Integration**: Pre-configured `Apple Silicon (Default)` API preset (`http://127.0.0.1:1976/v1`) powered by Apple's local Foundation Models via `fm serve` for 100% private, on-device, zero-token-cost intelligence.
+* **☀️ Enhanced Display Brightness Signaling**: Multi-display software pulse signaling with smooth ease-in-out animations, intensity calibration (5%–45%), and live test triggering.
 
 ---
 
 ## 🚀 Quick Download & Installation
 
 ### 1. Download the Installer
-Download the verified disk image directly from the [v1.4.0 GitHub Release](https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.4.0):
+Download the verified disk image directly from the [v1.5.0 GitHub Release](https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.5.0):
 
 | Asset | Version | Architecture | Size | SHA-256 Checksum |
 | :--- | :--- | :--- | :--- | :--- |
-| [**Ruby.dmg**](https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.4.0/Ruby.dmg) | `1.4.0` | Apple Silicon (`arm64`) | `18.4 MB` | `7c7961e6345281cac3917f142fc572fa611d665f753dcf1cc717f35d5431fa46` |
+| [**Ruby.dmg**](https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.5.0/Ruby.dmg) | `1.5.0` | Apple Silicon (`arm64`) | `18.6 MB` | `2c20c9f6efd4cf925aed6dd22754ad25ada6a2d4ca76cbdb3b418a1d7a1c300f` |
 
 > [!TIP]
 > You can verify your download integrity anytime via the terminal:
@@ -74,7 +84,7 @@ Hover your mouse over any question, multiple-choice prompt, or on-screen diagram
 ## 🌟 Architectural Highlights
 
 <p align="center">
-  <img src="assets/banners/ruby_features_banner.png" alt="Ruby 1.4.0 Architecture and Modes" width="100%" />
+  <img src="assets/banners/ruby_features_banner.png" alt="Ruby 1.5.0 Architecture and Modes" width="100%" />
 </p>
 
 ---
@@ -90,7 +100,7 @@ Ruby adapts to any test environment through 5 specialized output modes:
 ### 1. 🕶️ Remote Exam Mode (Stealth HUD)
 * **Screen Sharing Immunity**: Uses native macOS `.sharingType = .none`.
 * **Zero Recording Footprint**: The floating HUD window is **entirely omitted from screen capture and video calls** (Zoom, Google Meet, Microsoft Teams, Cisco Webex, ScreenCaptureKit, Loom, and OBS).
-* Displays concise step-by-step reasoning and choice confirmation right where you need it.
+* **Interactive Follow-up & Pin**: Includes dedicated Pin/Unpin position locking and an inline Search / Ask bar for interactive conversation.
 
 ### 2. 🔤 In-Person (CBT) Menu Bar Disguise
 * Answers appear seamlessly within the macOS menu bar status area.
@@ -122,7 +132,8 @@ Ruby adapts to any test environment through 5 specialized output modes:
 Ruby features a multi-preset provider engine with zero lock-in:
 
 * **Preconfigured Presets**:
-  * `OpenAI GPT-4o Mini (Default)`
+  * `Apple Silicon (Default)` (`http://127.0.0.1:1976/v1` via `fm serve`)
+  * `OpenAI GPT-4o Mini`
   * `OpenAI GPT-4o Vision`
   * `Ollama Local (qwen2.5vl:7b)` (`http://localhost:11434/v1`)
   * `Ollama Local (llama3.2-vision)` (`http://localhost:11434/v1`)
@@ -176,7 +187,7 @@ Then launch Ruby normally.
 <details>
 <summary><b>2. Can I use Ruby 100% offline without spending API credits?</b></summary>
 <br>
-Yes! Install <a href="https://ollama.com">Ollama</a> or <a href="https://lmstudio.ai">LM Studio</a>, pull a vision model (e.g. <code>ollama run qwen2.5vl:7b</code>), select the <b>Ollama Local</b> preset in Ruby's API Settings, and run completely offline without an internet connection.
+Yes! You can run Apple's on-device Foundation Models directly with <code>fm serve</code>, or install <a href="https://ollama.com">Ollama</a> / <a href="https://lmstudio.ai">LM Studio</a> to run completely offline without an internet connection or API keys.
 </details>
 
 <details>
@@ -188,7 +199,7 @@ No. Ruby constructs its floating overlay using macOS AppKit <code>NSWindow.Shari
 <details>
 <summary><b>4. Which macOS versions are supported?</b></summary>
 <br>
-Ruby 1.4.0 is optimized for <b>macOS 14.0 Sonoma</b> and <b>macOS 15.0+ Sequoia</b> on Apple Silicon (M1, M2, M3, M4 series).
+Ruby 1.5.0 is optimized for <b>macOS 14.0 Sonoma</b> and <b>macOS 15.0+ Sequoia</b> on Apple Silicon (M1, M2, M3, M4 series).
 </details>
 
 ---
@@ -202,5 +213,5 @@ Ruby 1.4.0 is optimized for <b>macOS 14.0 Sonoma</b> and <b>macOS 15.0+ Sequoia<
 ---
 
 <p align="center">
-  <b>Ruby 1.4.0</b> • Native macOS Engineering • Designed with ❤️ by Kuldeep Sisodiya
+  <b>Ruby 1.5.0</b> • Native macOS Engineering • Designed with ❤️ by Kuldeep Sisodiya
 </p>
