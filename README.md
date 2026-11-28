@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/banners/ruby_hero_banner.png" alt="Ruby 1.6.1 Hero Banner" width="100%" />
+  <img src="assets/banners/ruby_hero_banner.png" alt="Ruby 1.6.2 Hero Banner" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.6.1/Ruby.dmg"><img src="https://img.shields.io/badge/Download-Ruby%201.6.1%20DMG-E02444?style=for-the-badge&logo=apple&logoColor=white" alt="Download DMG"></a>
-  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.6.1"><img src="https://img.shields.io/badge/Release-v1.6.1-blue?style=for-the-badge&logo=github&logoColor=white" alt="v1.6.1"></a>
+  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.6.2/Ruby.dmg"><img src="https://img.shields.io/badge/Download-Ruby%201.6.2%20DMG-E02444?style=for-the-badge&logo=apple&logoColor=white" alt="Download DMG"></a>
+  <a href="https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.6.2"><img src="https://img.shields.io/badge/Release-v1.6.2-blue?style=for-the-badge&logo=github&logoColor=white" alt="v1.6.2"></a>
   <img src="https://img.shields.io/badge/macOS-14.0%2B%20Sonoma%20%7C%20Sequoia-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 14+">
   <img src="https://img.shields.io/badge/Architecture-Apple%20Silicon%20(arm64)-0A84FF?style=for-the-badge" alt="Architecture">
   <img src="https://img.shields.io/badge/Security-Encrypted%20Keychain-34C759?style=for-the-badge&logo=apple&logoColor=white" alt="Security">
@@ -14,30 +14,44 @@
 
 ## 💎 Overview
 
-**Ruby 1.6.1** is a native macOS desktop application engineered for real-time visual question solving and unobtrusive AI-assisted reasoning. Built from the ground up in **Swift & SwiftUI**, Ruby pairs Apple Vision OCR technology with a customizable multi-provider AI engine and hardware-level feedback systems.
+**Ruby 1.6.2** is a native macOS desktop application engineered for real-time visual question solving and unobtrusive AI-assisted reasoning. Built from the ground up in **Swift & SwiftUI**, Ruby pairs Apple Vision OCR technology with a customizable multi-provider AI engine, hardware-level feedback systems, and an automated answer accuracy validator.
 
 Whether you're running local offline inference via **Apple Silicon Fundamental Models (`fm serve`)**, local LLMs with **Ollama / LM Studio**, or querying high-parameter cloud models (**OpenAI GPT-4o, Claude, Mistral**), Ruby operates invisibly under your fingertips with zero telemetry, zero monthly subscriptions, and end-to-end local security.
 
 ---
 
-## ✨ What's New in Ruby 1.6.1
+## ✨ What's New in Ruby 1.6.2
 
-* **🍏 Fundamental Models (`system`) as Default Engine**: Preconfigured default inference engine pointing to `http://127.0.0.1:1976` (model: `system`) delivering 100% private, on-device intelligence with unlimited tokens. Zero third-party account requirements and zero monthly costs.
-* **💻 Direct Terminal `fm serve` Launcher**: If the local inference server cannot be reached, Ruby prompts you with an intelligent modal dialog. Clicking **Yes** automatically launches Terminal.app and executes `fm serve` for seamless zero-friction startup.
-* **👤 Dynamic macOS User Account & Avatar**: Dynamically resolves the authenticated user's macOS full name, system username, and Apple account profile avatar across every Mac device with zero hardcoded identities.
-* **🍷 Liquid Glass Materials & Tactile Physics**: Elevated with native macOS frosted glass materials (macOS Sonoma / Sequoia style), top-down specular rim lighting, subtle ambient shadows, and responsive Apple-style spring animations.
-* **💬 Typable Remote Exam Search / Ask & Position Pinning**: Fully editable follow-up bar with standard keyboard shortcuts (<kbd>⌘A</kbd>, <kbd>⌘C</kbd>, <kbd>⌘V</kbd>, <kbd>⌘Z</kbd>), window level management, auto-scrolling conversation history, and real pin/unpin coordinate locking.
+### 🎯 Answer Accuracy, Consistency & Response Quality
+* **Single-Source-of-Truth Answer Validation**: Added `AnswerValidator` to cross-check selected multiple-choice option letters against their extracted option text and explanation, automatically reconciling letter-vs-explanation contradictions (`Answer: <Letter> — <Option Text>`) and flagging uncertain or numerically inconsistent results.
+* **Parser & Prompt Fixes**:
+  * Fixed a regex bug in `ParsedAnswer` where ordinary prose lines (e.g., `"Because..."`, `"Answer: C..."`) were falsely parsed as option letters `B`/`A`.
+  * Upgraded `APIRequestFormatter` with Ruby's Master System Prompt across OpenAI Chat Completions, Ollama Generate, and Custom JSON providers, including negative-qualifier awareness (`NOT`, `EXCEPT`, `FALSE`, `INCORRECT`, `LEAST`, `MOST`, `ALL/NONE OF THE ABOVE`).
+* **OCR Reliability Improvements**: Added top-to-bottom, left-to-right reading-order sorting, overlapping-line deduplication, structured option extraction, and incomplete-OCR detection in `OCRManager`.
+* **Short Answer & Explained Answer Modes**: Added `ResponseDepth` (`Auto` | `Short` | `Explain`) persisted across **General** settings and the **Remote Exam** floating overlay footer.
+* **Session & Concurrency Isolation**: Added request/session generation guards in `AnswerService` and `OverlayController` so cancelled, superseded, or cross-preset responses cannot overwrite newer state.
+
+### 🔄 Built-in GitHub Update Checker
+* Added `UpdateChecker` and `UpdateSheetView` to check `kuldeepsisodiya/Ruby-AI` for new releases on launch, from **General → Software Update**, or via **Check for Updates...** in the menu bar.
+* Displays release version, full **Changelog**, **Never Remind** opt-out, and one-click **Download** of `Ruby.dmg` directly to `~/Downloads` with live progress.
+
+### 🪟 macOS Dock & Window Lifecycle Fixes
+* **Fixed Duplicate Dock Icons**: Applied `NSApp.setActivationPolicy` once at launch and coalesced **Hide from Dock** toggles with a clean app relaunch so `Dock.app` never creates duplicate Ruby tiles.
+* **Fixed Reopening Closed Window from Dock**: Implemented `applicationShouldHandleReopen(_:hasVisibleWindows:)` in `AppDelegate` and preserved the window instance on close (`orderOut(nil)`), so clicking the Ruby Dock icon reliably reopens the window.
+
+### 🧪 Comprehensive Testing
+* Expanded automated suite to **37/37 passing Swift unit tests**, including 14 new accuracy/consistency/regression tests in `AnswerAccuracyAndConsistencyTests` and update-checker parsing/semver tests.
 
 ---
 
 ## 🚀 Quick Download & Installation
 
 ### 1. Download the Installer
-Download the verified disk image directly from the [v1.6.1 GitHub Release](https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.6.1):
+Download the verified disk image directly from the [v1.6.2 GitHub Release](https://github.com/kuldeepsisodiya/Ruby-AI/releases/tag/v1.6.2):
 
 | Asset | Version | Architecture | Size | SHA-256 Checksum |
 | :--- | :--- | :--- | :--- | :--- |
-| [**Ruby.dmg**](https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.6.1/Ruby.dmg) | `1.6.1` | Apple Silicon (`arm64`) | `18.6 MB` | `2c0ab9a3436e9c2a59462d068fa3430ab4dba82559b18e702ea0b0701961b0a8` |
+| [**Ruby.dmg**](https://github.com/kuldeepsisodiya/Ruby-AI/releases/download/v1.6.2/Ruby.dmg) | `1.6.2` | Apple Silicon (`arm64`) | `18.7 MB` | `7b4417642d1454754e202ad8603d1ca6da019a5cb3911dc93cb0225ec08e1916` |
 
 > [!TIP]
 > You can verify your download integrity anytime via the terminal:
@@ -84,7 +98,7 @@ Hover your mouse over any question, multiple-choice prompt, or on-screen diagram
 ## 🌟 Architectural Highlights
 
 <p align="center">
-  <img src="assets/banners/ruby_features_banner.png" alt="Ruby 1.6.1 Architecture and Modes" width="100%" />
+  <img src="assets/banners/ruby_features_banner.png" alt="Ruby 1.6.2 Architecture and Modes" width="100%" />
 </p>
 
 ---
@@ -201,7 +215,7 @@ Then launch Ruby normally.
 <details>
 <summary><b>2. Can I use Ruby 100% offline without spending API credits?</b></summary>
 <br>
-Yes! Ruby 1.6.1 defaults to Apple Silicon Foundation Models (<code>model: system</code>) on <code>127.0.0.1:1976</code> via <code>fm serve</code> with unlimited tokens. You can also run <a href="https://ollama.com">Ollama</a> or <a href="https://lmstudio.ai">LM Studio</a> completely offline without an internet connection or external API keys.
+Yes! Ruby 1.6.2 defaults to Apple Silicon Foundation Models (<code>model: system</code>) on <code>127.0.0.1:1976</code> via <code>fm serve</code> with unlimited tokens. You can also run <a href="https://ollama.com">Ollama</a> or <a href="https://lmstudio.ai">LM Studio</a> completely offline without an internet connection or external API keys.
 </details>
 
 <details>
@@ -213,7 +227,7 @@ No. Ruby constructs its floating overlay using macOS AppKit <code>NSWindow.Shari
 <details>
 <summary><b>4. Which macOS versions are supported?</b></summary>
 <br>
-Ruby 1.6.1 is optimized for <b>macOS 14.0 Sonoma</b> and <b>macOS 15.0+ Sequoia</b> on Apple Silicon (M1, M2, M3, M4 series).
+Ruby 1.6.2 is optimized for <b>macOS 14.0 Sonoma</b> and <b>macOS 15.0+ Sequoia</b> on Apple Silicon (M1, M2, M3, M4 series).
 </details>
 
 ---
@@ -231,5 +245,5 @@ Ruby 1.6.1 is optimized for <b>macOS 14.0 Sonoma</b> and <b>macOS 15.0+ Sequoia<
 ---
 
 <p align="center">
-  <b>Ruby 1.6.1</b> • Native macOS Engineering • Designed with ❤️ by Kuldeep Sisodiya
+  <b>Ruby 1.6.2</b> • Native macOS Engineering • Designed with ❤️ by Kuldeep Sisodiya
 </p>
